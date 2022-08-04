@@ -28,12 +28,12 @@
             <th>Keterangan</th>
             <th width="280px">Action</th>
         </tr>
-        @php
+        {{-- @php
             $i = 1;
-        @endphp
+        @endphp --}}
         @foreach ($students as $student)
         <tr>
-            <td>{{ $i++ }}</td>
+            <td>{{ ++$i }}</td>
             <td>{{ $student->nis }}</td>
             <td>{{ $student->nama }}</td>
             <td>{{ $student->rombel }}</td>

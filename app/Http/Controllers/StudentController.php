@@ -14,9 +14,14 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('students.index',[
-            'students' => Student::latest()->paginate(5)
-        ]);
+        // return view('students.index',[
+        //     'students' => Student::latest()->paginate(5)
+        // ]);
+
+        $students = Student::latest()->paginate(5);
+
+        return view('students.index', compact('students'))
+                    ->with('i', (request()->input('page', 1) - 1) * 5); // ini nanti tanyain algoritma-nya kayak gimana
     }
 
     /**
