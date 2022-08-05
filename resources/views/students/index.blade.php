@@ -28,9 +28,9 @@
             <th>Keterangan</th>
             <th width="280px">Action</th>
         </tr>
-        {{-- @php
-            $i = 1;
-        @endphp --}}
+        @php
+            $i = (request()->input('page', 1)-1)*5;
+        @endphp
         @foreach ($students as $student)
         <tr>
             <td>{{ ++$i }}</td>

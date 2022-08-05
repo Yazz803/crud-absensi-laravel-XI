@@ -20,8 +20,7 @@ class StudentController extends Controller
 
         $students = Student::latest()->paginate(5);
 
-        return view('students.index', compact('students'))
-                    ->with('i', (request()->input('page', 1) - 1) * 5); // ini nanti tanyain algoritma-nya kayak gimana
+        return view('students.index', compact('students')); // ini nanti tanyain algoritma-nya kayak gimana
     }
 
     /**
